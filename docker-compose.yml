@@ -7,7 +7,7 @@ services:
             dockerfile: Dockerfile
         container_name: app
         volumes:
-            - data:./app/boxfuse-sample-java-war-hello/target/
+            - data:/home/regina/homework2/app/boxfuse-sample-java-war-hello/target/
     tomcat:
         build:
             context: ./tomcat
