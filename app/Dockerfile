@@ -1,10 +1,11 @@
-FROM ubuntu:20.04
+FROM maven:3.5.2-jdk-8-alpine
 
-ENV DEBIAN_FRONTEND=noninteractive 
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+#ENV DEBIAN_FRONTEND=noninteractive 
+#ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
-RUN apt update 
-RUN apt install git wget default-jdk maven -y
+#RUN apt update 
+RUN apt install git wget -y
+#default-jdk maven -y
 
 WORKDIR /home/regina/homework2/app/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
