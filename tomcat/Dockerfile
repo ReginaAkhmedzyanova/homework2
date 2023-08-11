@@ -13,8 +13,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR $CATALINA_HOME
 RUN apk update && wget https://archive.apache.org/dist/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O ./tomcat.tar.gz
 WORKDIR ./ && tar xvfz tomcat.tar.gz
-RUN cp -Rv ./apache-tomcat-${TOMCAT_VERSION}/* $CATALINA_HOME
-RUN rm -rf ./apache-tomcat-${TOMCAT_VERSION} && rm -rf ./tomcat.tar.gz
+RUN mv ./apache-tomcat-${TOMCAT_VERSION}/* $CATALINA_HOME
+RUN rm -rf ./tomcat.tar.gz
 
 
 EXPOSE 8080
