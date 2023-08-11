@@ -1,7 +1,7 @@
 FROM alpine:latest
 
+ARG JAVA_HOME
 ENV CATALINA_HOME /usr/local/tomcat
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH $CATALINA_HOME/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive 
 
