@@ -21,4 +21,4 @@ services:
             - app
 volumes:
     data:
-    
+...
