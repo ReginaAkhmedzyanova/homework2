@@ -8,6 +8,8 @@ services:
         container_name: app
         volumes:
             - data:/home/regina/homework2/app/boxfuse-sample-java-war-hello/target/
+#            - java:/usr/lib/jvm/java-11-openjdk-amd64
+
     tomcat:
         build:
             context: ./tomcat
@@ -17,8 +19,9 @@ services:
             - 8080:8080
         volumes:
             - data:/usr/local/tomcat/webapps/
+#            - java:/usr/lib/jvm/java-11-openjdk
         depends_on:
             - app
 volumes:
     data:
-...
+#    java:
