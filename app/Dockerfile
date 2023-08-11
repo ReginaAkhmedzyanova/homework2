@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
 
-
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+#ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV DEBIAN_FRONTEND=noninteractive 
 
 RUN apt update 
