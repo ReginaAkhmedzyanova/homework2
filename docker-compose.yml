@@ -7,7 +7,7 @@ services:
             dockerfile: Dockerfile
         container_name: ${APP_NAME:?err}-app
         volumes:
-            - data: /usr/local/tomcat/webapps
+            - data: ./boxfuse-sample-java-war-hello/target
     tomcat:
         build:
             context: ./tomcat
@@ -16,8 +16,7 @@ services:
         ports:
             - 8080:8080
         volumes:
-            - data: ./data
-            - ./app/target/hello-1.0.war:/usr/local/tomcat/webapps/hello-1.0.war
+            - data: /usr/local/tomcat/webapps/
         depends_on:
             - app
 volumes:
