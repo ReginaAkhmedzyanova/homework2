@@ -2,8 +2,6 @@ FROM alpine:latest
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk
-ENV PATH $JAVA_HOME/bin:$PATH
-ENV PATH $CATALINA_HOME/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive
 
 
