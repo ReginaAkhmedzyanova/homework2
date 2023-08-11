@@ -1,0 +1,25 @@
+---
+version: '3'
+services:
+    app:
+        build:
+            context: ./app
+            dockerfile: Dockerfile
+        container_name: ${APP_NAME:?err}-app
+        volumes:
+            - data: /usr/local/tomcat/webapps
+    tomcat:
+        build:
+            context: ./tomcat
+            dockerfile: Dockerfile
+        container_name: ${APP_NAME:?err}-tomcat
+        ports:
+            - 8080:8080
+        volumes:
+            - data: ./data
+            - ./app/target/hello-1.0.war:/usr/local/tomcat/webapps/hello-1.0.war
+        depends_on:
+            - app
+volumes:
+    data:
+    external: true
