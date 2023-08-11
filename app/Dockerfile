@@ -4,7 +4,7 @@ FROM maven:3.5.2-jdk-8-alpine
 #ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
 #RUN apt update 
-RUN apk add git 
+RUN apk add git
 #default-jdk maven -y
 
 WORKDIR /home/regina/homework2/app/
