@@ -1,9 +1,10 @@
 FROM alpine:latest
 
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk
 ENV CATALINA_HOME /usr/local/tomcat
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk
 ENV PATH $CATALINA_HOME/bin:$PATH
-ENV DEBIAN_FRONTEND=noninteractive 
+ENV DEBIAN_FRONTEND=noninteractive
+
 
 RUN apk update
 RUN apk add openjdk11
