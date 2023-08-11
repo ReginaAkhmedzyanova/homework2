@@ -1,11 +1,10 @@
-FROM maven:3.5.2-jdk-8-alpine
+FROM ubuntu:18.04
 
-#ENV DEBIAN_FRONTEND=noninteractive 
-#ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+ENV DEBIAN_FRONTEND=noninteractive 
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-#RUN apt update 
-RUN apk add git
-#default-jdk maven -y
+RUN apt update 
+RUN apk install git openjdk-8-jdk maven -y
 
 WORKDIR /home/regina/homework2/app/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
