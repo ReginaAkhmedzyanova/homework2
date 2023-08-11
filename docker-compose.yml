@@ -6,7 +6,7 @@ services:
             context: ./app
             dockerfile: Dockerfile
         container_name: app
-        restart: no
+        restart: "no"
         volumes:
             - data:/home/regina/homework2/app/boxfuse-sample-java-war-hello/target/
 #            - java:/usr/lib/jvm/java-11-openjdk-amd64
