@@ -1,6 +1,5 @@
 FROM alpine:latest
 
-ENV TOMCAT_VERSION 9.0.78
 ENV CATALINA_HOME /usr/local/tomcat
 #ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -11,10 +10,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 
 WORKDIR $CATALINA_HOME
-RUN apk update && wget https://archive.apache.org/dist/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O ./tomcat.tar.gz
-WORKDIR ./ && tar xvfz tomcat.tar.gz
-RUN mv ./apache-tomcat-${TOMCAT_VERSION}/* $CATALINA_HOME
-RUN rm -rf ./tomcat.tar.gz
+RUN apk update && wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz 
+WORKDIR ./ && tar xvfz apache-tomcat-9.0.78.tar.gz
+RUN cp -Rv ./apache-tomcat-9.0.78/* $CATALINA_HOME
+RUN rm -rf ./apache-tomcat-9.0.78 && rm -rf ./apache-tomcat-9.0.78.tar.gz
 
 
 EXPOSE 8080
